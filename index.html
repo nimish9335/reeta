@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Princess 💖</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6f2);
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    section {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    section.active {
+      display: flex;
+      animation: fade 0.8s ease-in-out;
+    }
+
+    #page1, #page2, #page3 {
+      justify-content: center;
+    }
+
+    #page4 {
+      justify-content: flex-start;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1, h2 {
+      color: #cc0066;
+      margin-bottom: 25px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 18px 35px;
+      background: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #d63384;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 25px;
+      border: 2px solid #ff80bf;
+      width: 240px;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .gift-box {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      margin: 30px auto;
+      border-radius: 30px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .confetti {
+      position: absolute;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: gold;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .circle-container {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      margin-top: 70px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: rotateSway 25s linear infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes rotateSway {
+      0% { transform: rotateY(0deg) translateX(0); }
+      25% { transform: rotateY(90deg) translateX(-20px); }
+      50% { transform: rotateY(180deg) translateX(20px); }
+      75% { transform: rotateY(270deg) translateX(-15px); }
+      100% { transform: rotateY(360deg) translateX(0); }
+    }
+
+    .circle img {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 5px solid #ff99cc;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 20px;
+      transform-style: preserve-3d;
+    }
+
+    #circleName {
+      font-size: 2rem;
+      color: #e6005c;
+      font-weight: bold;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    #flirtyLine {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #d63384;
+      margin-bottom: 50px;
+    }
+
+    #replayBtn {
+      margin-top: 40px;
+      padding: 14px 30px;
+      background-color: #ff66cc;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: bounceIn 1.2s ease;
+      box-shadow: 0 0 15px rgba(255, 102, 204, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    #replayBtn:hover {
+      background-color: #e60073;
+      box-shadow: 0 0 25px rgba(255, 51, 153, 0.9);
+      transform: scale(1.1);
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      h1, h2 {
+        font-size: 1.8rem;
+      }
+
+      p, #flirtyLine {
+        font-size: 1rem;
+      }
+
+      .circle-container {
+        width: 300px;
+        height: 300px;
+      }
+
+      .circle img {
+        width: 90px;
+        height: 90px;
+      }
+
+      #circleName {
+        font-size: 1.3rem;
+      }
+
+      #replayBtn {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <section id="page1" class="active">
+    <h1>💖 Welcome, My most special and dearest friend 💖</h1>
+    <p>Here’s a little something to make you smile... 🎁</p>
+    <button onclick="goToPage(2)">Begin Surprise ➡️</button>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section id="page2">
+    <h2>🎁 A magical gift, just for you</h2>
+    <div class="gift-box">
+      <h2 style="padding-top: 40%;">Hello !</h2>
+    </div>
+    <p>Type your lovely name below 👇</p>
+    <input type="text" id="name" placeholder="Princess" />
+    <button onclick="goToPage(3)">Open 🎉</button>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section id="page3">
+    <h2 id="wishText">Your presence makes this place beautiful — Welcome!</h2>
+    <h3>Tumhare jaise log rare hote hain... sweet, strong, and always spreading light ✨💫</h3>
+    <button onclick="goToPage(4)">Next ➡️ Memories 📸</button>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section id="page4">
+    <h2>✨ Your Lovely Memories ✨</h2>
+    <h2 id="circleName">💗 💗</h2>
+    <p id="flirtyLine">"Har photo mein ek chehra sabse zyada chamak raha hai... obviously tum hi ho na Princess? 😉💖"</p>
+    <div class="circle-container">
+      <div class="circle" id="circle">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.45_ed0e813a.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.46_0a4a42d9.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.46_563ae2f8.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.46_b5461578.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.47_84da02db.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.47_b046e254.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.48_18f1c552.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.48_93a92dbc.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.46_0a4a42d9.jpg" alt="">
+        <img src="./WhatsApp Image 2025-07-08 at 22.27.47_b046e254.jpg" alt="">
+      </div>
+    </div>
+    <button id="replayBtn" onclick="goToPage(1)">🔁 See it Again</button>
+  </section>
+
+  <script>
+    function goToPage(pageNum) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById("page" + pageNum).classList.add("active");
+
+      const name = document.getElementById("name").value || "Princess";
+
+      if (pageNum === 3) {
+        document.getElementById("wishText").innerText = `Your presence makes this place beautiful — Welcome! ${name}`;
+        showConfetti();
+      }
+
+      if (pageNum === 4) {
+        document.getElementById("circleName").innerText = `💗 ${name} 💗`;
+      }
+    }
+
+    function showConfetti() {
+      for (let i = 0; i < 60; i++) {
+        let c = document.createElement("div");
+        c.className = "confetti";
+        c.style.left = Math.random() * window.innerWidth + "px";
+        c.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        c.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 5000);
+      }
+    }
+
+    window.onload = function () {
+      const imgs = document.querySelectorAll("#circle img");
+      const total = imgs.length;
+      imgs.forEach((img, i) => {
+        const angle = (360 / total) * i;
+        img.style.transform = `rotateY(${angle}deg) translateZ(280px)`;
+      });
+    };
+  </script>
+</body>
+</html>
